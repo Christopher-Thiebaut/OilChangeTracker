@@ -9,67 +9,117 @@
 import Foundation
 
 protocol VehiclePersistenceManager {
-    func load() -> [Vehicle]
+    func load(completion: @escaping ([Vehicle], Error?) -> Void)
     func save(_ vehicles: [Vehicle])
+}
+
+protocol MileageUpdater {
+    var delegate: MileageUpdaterDelegate? { get set }
+    func trackVehicleWith(vin: String)
+}
+
+protocol MileageUpdaterDelegate: class {
+    func vehicleTraveled(vin: String, miles: Int)
 }
 
 class VehicleController {
     
+    enum Notifications {
+        static let loadErrorNotification = Notification.Name("notificationLoadError")
+    }
+    
+    var vehicles: [Vehicle] = []
+    
     var persistenceManager: VehiclePersistenceManager
-    
-    var vehicles: [Vehicle]
-    
-    static let `default` = VehicleController(persistenceManager: LocalFileVehiclePersistenceManager(fileName: nil))
     
     init(persistenceManager: VehiclePersistenceManager){
         self.persistenceManager = persistenceManager
-        self.vehicles = persistenceManager.load()
-        if vehicles.count == 0 { setupSampleVehicles() }
+        loadVehiclesFromPersistentStore()
     }
     
-    @discardableResult func addVehicle(withName name: String, oilChangeInterval: Double) -> Vehicle {
-        let vehicle = Vehicle(name: name, oilChangeInterval: oilChangeInterval)
+    private func loadVehiclesFromPersistentStore() {
+        persistenceManager.load {[weak self] (vehicles, error) in
+            if let error = error {
+                self?.handleLoadError(error)
+            }
+            self?.vehicles = vehicles
+        }
+    }
+    
+    private func handleLoadError(_ error: Error){
+        NSLog("Failed to load vehicles from persistent storage: \(error.localizedDescription)")
+        sendLoadErrorNotification(error)
+    }
+    
+    private func sendLoadErrorNotification(_ error: Error) {
+        let notification = Notification(name: Notifications.loadErrorNotification, object: error, userInfo: nil)
+        NotificationCenter.default.post(notification)
+    }
+    
+    //MARK: - ADD
+    func addVehicle(_ vehicle: Vehicle){
         vehicles.append(vehicle)
-        persistenceManager.save(vehicles)
-        return vehicle
+        save()
     }
     
-    func addOilChange(_ oilChange: OilChange, to vehicle: Vehicle){
-        vehicle.addOilChange(oilChange)
-        persistenceManager.save(vehicles)
+    func addOilChange(_ oilChange: OilChange,to vehicle: Vehicle){
+        guard let indexOfVehicle = vehicles.index(of: vehicle) else { return }
+        oilChange.vehicle = vehicle
+        vehicles[indexOfVehicle].addOilChange(oilChange)
+        save()
     }
     
-    func updateVehicle(_ vehicle: Vehicle, withName name: String, andOilChangeInterval interval: Double){
-        vehicle.name = name
-        vehicle.oilChangeInterval = interval
-        persistenceManager.save(vehicles)
+    //MARK: - UPDATE VEHICLE INFO
+    func updateNameOfVehicle(_ vehicle: Vehicle, to name: String){
+        guard let indexToEdit = vehicles.index(of: vehicle) else { return }
+        vehicles[indexToEdit].name = name
+        save()
     }
     
-    func updateOilChange(_ oilChange: OilChange, date: Date, odometer: Double, oilLife: Double, filterLife: Double, location: String){
-        oilChange.date = date
-        oilChange.odometerReading = odometer
-        oilChange.oilLife = oilLife
+    func updateMileageOfVehicle(_ vehicle: Vehicle, to mileage: Double){
+        guard let indexToEdit = vehicles.index(of: vehicle) else { return }
+        vehicles[indexToEdit].odometerReading = mileage
+    }
+    
+    func updateMilesBetweenOilChanges(_ vehicle: Vehicle, to miles: Double){
+        guard let indexToEdit = vehicles.index(of: vehicle) else { return }
+        vehicles[indexToEdit].milesBetweenOilChanges = miles
+        save()
+    }
+    
+    func updateTimeIntervalBetweenOilChanges(_ vehicle: Vehicle, to timeInterval: TimeInterval){
+        guard let indexToEdit = vehicles.index(of: vehicle) else { return }
+        vehicles[indexToEdit].timeIntervalBetweenOilChanges = timeInterval
+        save()
+    }
+    
+    //MARK: - UPDATE OILCHANGE INFO
+    func updateOdometerReading(for oilChange: OilChange, to odometerReading: Double){
+        oilChange.odometerReading = odometerReading
+        save()
+    }
+    
+    func updateFilterLife(for oilChange: OilChange, to filterLife: Double){
         oilChange.filterLife = filterLife
-        oilChange.location = location
+        save()
     }
     
-    func removeVehicle(_ vehicle: Vehicle){
+    //MARK: - REMOVE
+    func removeVehicleMatching(_ vehicle: Vehicle){
         guard let indexToRemove = vehicles.index(of: vehicle) else { return }
         vehicles.remove(at: indexToRemove)
-        persistenceManager.save(vehicles)
+        save()
     }
     
     func removeOilChange(_ oilChange: OilChange, from vehicle: Vehicle){
-        vehicle.removeOilChange(oilChange)
-        persistenceManager.save(vehicles)
+        guard let indexOfVehicle = vehicles.index(of: vehicle) else { return }
+        vehicles[indexOfVehicle].removeOilChange(oilChange)
+        save()
     }
     
-    private func setupSampleVehicles() {
-        addVehicle(withName: "Chevy Trailblazer", oilChangeInterval: 5000)
-        let oilChange = OilChange(odometerReading: 100_000, date: Date(), oilLife: 5000, filterLife: 6000, location: "Home")
-        addOilChange(oilChange, to: vehicles[0])
-        addVehicle(withName: "Chevy Astro", oilChangeInterval: 5000)
-        addVehicle(withName: "Honda CRV", oilChangeInterval: 5000)
+    //MARK: - UTILITY
+    private func save() {
+        persistenceManager.save(vehicles)
     }
     
 }

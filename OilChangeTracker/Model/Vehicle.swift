@@ -10,18 +10,23 @@ import Foundation
 
 class Vehicle: Codable, Equatable {
     var name: String
-    var oilChangeInterval: Double
+    var milesBetweenOilChanges: Double
+    var timeIntervalBetweenOilChanges: TimeInterval
     private (set) var oilChanges: [OilChange]
     var lastOilChange: OilChange?
+    var vin: String?
+    var odometerReading: Double
     
-    init(name: String, oilChangeInterval: Double) {
+    init(name: String, milesBetweenOilChanges: Double, timeIntervalBetweenOilChanges: TimeInterval, odometerReading: Double) {
         self.name = name
-        self.oilChangeInterval = oilChangeInterval
+        self.milesBetweenOilChanges = milesBetweenOilChanges
         self.oilChanges = []
+        self.odometerReading = odometerReading
+        self.timeIntervalBetweenOilChanges = timeIntervalBetweenOilChanges
     }
     
     static func == (lhs: Vehicle, rhs: Vehicle) -> Bool {
-        return lhs.name == rhs.name && lhs.oilChangeInterval == rhs.oilChangeInterval && lhs.oilChanges == rhs.oilChanges
+        return lhs.name == rhs.name && lhs.milesBetweenOilChanges == rhs.milesBetweenOilChanges && lhs.oilChanges == rhs.oilChanges
     }
     
     func addOilChange(_ oilChange: OilChange){

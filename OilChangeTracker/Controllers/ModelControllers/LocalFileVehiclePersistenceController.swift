@@ -13,9 +13,9 @@ class LocalFileVehiclePersistenceManager: VehiclePersistenceManager {
     static let defaultFileName = "vehicles.json"
     var fileName: String
     
-    var fileURL: URL? {
+    var fileURL: URL {
         let documentURLs = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-        guard let url = documentURLs.first else { return nil }
+        let url = documentURLs[0]
         return url.appendingPathComponent(fileName)
     }
     
@@ -27,29 +27,22 @@ class LocalFileVehiclePersistenceManager: VehiclePersistenceManager {
         }
     }
     
-    func load() -> [Vehicle] {
-        guard let url = fileURL else {
-            NSLog("Cannot get URL for chosen file name or cannot access document directory.")
-            return []
-        }
+    func load(completion: @escaping ([Vehicle], Error?) -> Void) {
         var vehicles: [Vehicle] = []
         do {
-            let data = try Data(contentsOf: url)
+            let data = try Data(contentsOf: fileURL)
             vehicles = try JSONDecoder().decode([Vehicle].self, from: data)
+            completion(vehicles, nil)
         } catch {
             NSLog("Error loading vehicles from \(fileName): \(error.localizedDescription)")
+            completion(vehicles, error)
         }
-        return vehicles
     }
     
     func save(_ vehicles: [Vehicle]) {
-        guard let url = fileURL else {
-            NSLog("Cannot save vehicles to file because the file or directory could not be accessed.")
-            return
-        }
         do {
             let data = try JSONEncoder().encode(vehicles)
-            try data.write(to: url)
+            try data.write(to: fileURL)
         } catch {
             NSLog("Error saving vehicles to \(fileName): \(error.localizedDescription)")
         }

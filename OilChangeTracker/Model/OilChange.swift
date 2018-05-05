@@ -15,6 +15,7 @@ class OilChange: Codable, Equatable {
     var filterLife: Double
     var date: Date
     var location: String
+    var vehicle: Vehicle?
     
     init(odometerReading: Double, date: Date, oilLife: Double, filterLife: Double, location: String){
         self.odometerReading = odometerReading

@@ -7,29 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B37062642090CF5000FBCA6D /* VehicleDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37062632090CF5000FBCA6D /* VehicleDetailViewController.swift */; };
-		B37062692091497900FBCA6D /* OilChangeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37062672091497900FBCA6D /* OilChangeTableViewCell.swift */; };
-		B370626A2091497900FBCA6D /* OilChangeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B37062682091497900FBCA6D /* OilChangeTableViewCell.xib */; };
 		B3A25E74208C2BFA0089394C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A25E73208C2BFA0089394C /* AppDelegate.swift */; };
-		B3A25E79208C2BFA0089394C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3A25E77208C2BFA0089394C /* Main.storyboard */; };
 		B3A25E7B208C2BFB0089394C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3A25E7A208C2BFB0089394C /* Assets.xcassets */; };
 		B3A25E7E208C2BFB0089394C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3A25E7C208C2BFB0089394C /* LaunchScreen.storyboard */; };
 		B3A25E88208C2C530089394C /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A25E87208C2C530089394C /* Vehicle.swift */; };
 		B3A25E8A208C2C900089394C /* OilChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A25E89208C2C900089394C /* OilChange.swift */; };
 		B3A25E8E208C2D420089394C /* VehicleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A25E8D208C2D420089394C /* VehicleController.swift */; };
 		B3C56805208D04C2003FCD02 /* LocalFileVehiclePersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C56804208D04C2003FCD02 /* LocalFileVehiclePersistenceController.swift */; };
-		B3C5680A208D1544003FCD02 /* VehicleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C56809208D1544003FCD02 /* VehicleTableViewController.swift */; };
-		B3C5680E208D1872003FCD02 /* VehicleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C5680D208D1872003FCD02 /* VehicleTableViewCell.swift */; };
-		B3C56810208D1A54003FCD02 /* VehicleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3C5680F208D1A54003FCD02 /* VehicleTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		B37062632090CF5000FBCA6D /* VehicleDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleDetailViewController.swift; sourceTree = "<group>"; };
-		B37062672091497900FBCA6D /* OilChangeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OilChangeTableViewCell.swift; sourceTree = "<group>"; };
-		B37062682091497900FBCA6D /* OilChangeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OilChangeTableViewCell.xib; sourceTree = "<group>"; };
 		B3A25E70208C2BFA0089394C /* OilChangeTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OilChangeTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3A25E73208C2BFA0089394C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B3A25E78208C2BFA0089394C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B3A25E7A208C2BFB0089394C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B3A25E7D208C2BFB0089394C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B3A25E7F208C2BFB0089394C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -37,9 +26,6 @@
 		B3A25E89208C2C900089394C /* OilChange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OilChange.swift; sourceTree = "<group>"; };
 		B3A25E8D208C2D420089394C /* VehicleController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleController.swift; sourceTree = "<group>"; };
 		B3C56804208D04C2003FCD02 /* LocalFileVehiclePersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFileVehiclePersistenceController.swift; sourceTree = "<group>"; };
-		B3C56809208D1544003FCD02 /* VehicleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleTableViewController.swift; sourceTree = "<group>"; };
-		B3C5680D208D1872003FCD02 /* VehicleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleTableViewCell.swift; sourceTree = "<group>"; };
-		B3C5680F208D1A54003FCD02 /* VehicleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VehicleTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,8 +78,6 @@
 		B3A25E8B208C2D210089394C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				B3C56809208D1544003FCD02 /* VehicleTableViewController.swift */,
-				B37062632090CF5000FBCA6D /* VehicleDetailViewController.swift */,
 				B3A25E8C208C2D2D0089394C /* ModelControllers */,
 			);
 			path = Controllers;
@@ -123,8 +107,6 @@
 			isa = PBXGroup;
 			children = (
 				B3C5680C208D180B003FCD02 /* Storyboards */,
-				B3C5680D208D1872003FCD02 /* VehicleTableViewCell.swift */,
-				B3C5680F208D1A54003FCD02 /* VehicleTableViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -132,9 +114,6 @@
 		B3C5680C208D180B003FCD02 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				B3A25E77208C2BFA0089394C /* Main.storyboard */,
-				B37062672091497900FBCA6D /* OilChangeTableViewCell.swift */,
-				B37062682091497900FBCA6D /* OilChangeTableViewCell.xib */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -197,11 +176,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B3C56810208D1A54003FCD02 /* VehicleTableViewCell.xib in Resources */,
 				B3A25E7E208C2BFB0089394C /* LaunchScreen.storyboard in Resources */,
-				B370626A2091497900FBCA6D /* OilChangeTableViewCell.xib in Resources */,
 				B3A25E7B208C2BFB0089394C /* Assets.xcassets in Resources */,
-				B3A25E79208C2BFA0089394C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -213,10 +189,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3A25E8A208C2C900089394C /* OilChange.swift in Sources */,
-				B3C5680E208D1872003FCD02 /* VehicleTableViewCell.swift in Sources */,
-				B37062692091497900FBCA6D /* OilChangeTableViewCell.swift in Sources */,
-				B37062642090CF5000FBCA6D /* VehicleDetailViewController.swift in Sources */,
-				B3C5680A208D1544003FCD02 /* VehicleTableViewController.swift in Sources */,
 				B3A25E88208C2C530089394C /* Vehicle.swift in Sources */,
 				B3C56805208D04C2003FCD02 /* LocalFileVehiclePersistenceController.swift in Sources */,
 				B3A25E74208C2BFA0089394C /* AppDelegate.swift in Sources */,
@@ -227,14 +199,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		B3A25E77208C2BFA0089394C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B3A25E78208C2BFA0089394C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		B3A25E7C208C2BFB0089394C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
