@@ -9,17 +9,10 @@
 import Foundation
 
 protocol VehiclePersistenceManager {
-    func load(completion: @escaping ([Vehicle], Error?) -> Void)
+    func loadAllVehicles(completion: @escaping ([Vehicle]?, Error?) -> Void)
+    func loadCurrentVehicle(completion: @escaping (Vehicle?, Error?) -> Void)
     func save(_ vehicles: [Vehicle])
-}
-
-protocol MileageUpdater {
-    var delegate: MileageUpdaterDelegate? { get set }
-    func trackVehicleWith(vin: String)
-}
-
-protocol MileageUpdaterDelegate: class {
-    func vehicleTraveled(vin: String, miles: Int)
+    func updateCurrentVehicle(to vehicle: Vehicle?)
 }
 
 class VehicleController {
@@ -30,19 +23,38 @@ class VehicleController {
     
     var vehicles: [Vehicle] = []
     
+    var currentVehicle: Vehicle? {
+        didSet {
+            persistenceManager.updateCurrentVehicle(to: currentVehicle)
+        }
+    }
+    
     var persistenceManager: VehiclePersistenceManager
+    
+    static let shared = VehicleController(persistenceManager: LocalFileVehiclePersistenceManager())
     
     init(persistenceManager: VehiclePersistenceManager){
         self.persistenceManager = persistenceManager
         loadVehiclesFromPersistentStore()
+        loadCurrentVehicleFromPersistentStore()
     }
     
     private func loadVehiclesFromPersistentStore() {
-        persistenceManager.load {[weak self] (vehicles, error) in
+        persistenceManager.loadAllVehicles {[weak self] (vehicles, error) in
             if let error = error {
                 self?.handleLoadError(error)
             }
-            self?.vehicles = vehicles
+            self?.vehicles = vehicles ?? []
+        }
+    }
+    
+    private func loadCurrentVehicleFromPersistentStore() {
+        persistenceManager.loadCurrentVehicle {[weak self] (vehicle, _) in
+            if let vehicle = vehicle {
+                self?.currentVehicle = vehicle
+            }else{
+                self?.currentVehicle = self?.vehicles.first
+            }
         }
     }
     
@@ -57,8 +69,12 @@ class VehicleController {
     }
     
     //MARK: - ADD
-    func addVehicle(_ vehicle: Vehicle){
-        vehicles.append(vehicle)
+    func addVehicle(_ vehicle: Vehicle, at index: Int? = nil){
+        if let index = index {
+            vehicles.insert(vehicle, at: index)
+        }else{
+            vehicles.append(vehicle)
+        }
         save()
     }
     
@@ -104,10 +120,23 @@ class VehicleController {
         save()
     }
     
+    func updateDate(for oilChange: OilChange, to date: Date){
+        oilChange.date = date
+        save()
+    }
+    
+    func updateLocation(for oilChange: OilChange, to location: String){
+        oilChange.location = location
+        save()
+    }
+    
     //MARK: - REMOVE
     func removeVehicleMatching(_ vehicle: Vehicle){
         guard let indexToRemove = vehicles.index(of: vehicle) else { return }
         vehicles.remove(at: indexToRemove)
+        if vehicle ==  currentVehicle {
+            currentVehicle = nil
+        }
         save()
     }
     

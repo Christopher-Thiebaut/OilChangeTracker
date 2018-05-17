@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B35D9EDE20AE0F0500586132 /* CurrentVehicleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B35D9EDD20AE0F0500586132 /* CurrentVehicleViewController.swift */; };
+		B38FAF9620AB25DA009AA8D3 /* VehiclesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38FAF9520AB25DA009AA8D3 /* VehiclesTableViewController.swift */; };
+		B38FAF9820AB27F7009AA8D3 /* OilChangeTracker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B38FAF9720AB27F7009AA8D3 /* OilChangeTracker.storyboard */; };
 		B3A25E74208C2BFA0089394C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A25E73208C2BFA0089394C /* AppDelegate.swift */; };
 		B3A25E7B208C2BFB0089394C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3A25E7A208C2BFB0089394C /* Assets.xcassets */; };
 		B3A25E7E208C2BFB0089394C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3A25E7C208C2BFB0089394C /* LaunchScreen.storyboard */; };
@@ -17,6 +20,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B35D9EDD20AE0F0500586132 /* CurrentVehicleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentVehicleViewController.swift; sourceTree = "<group>"; };
+		B38FAF9520AB25DA009AA8D3 /* VehiclesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehiclesTableViewController.swift; sourceTree = "<group>"; };
+		B38FAF9720AB27F7009AA8D3 /* OilChangeTracker.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OilChangeTracker.storyboard; sourceTree = "<group>"; };
 		B3A25E70208C2BFA0089394C /* OilChangeTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OilChangeTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3A25E73208C2BFA0089394C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B3A25E7A208C2BFB0089394C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -39,6 +45,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B38FAF9420AB253E009AA8D3 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				B38FAF9520AB25DA009AA8D3 /* VehiclesTableViewController.swift */,
+				B35D9EDD20AE0F0500586132 /* CurrentVehicleViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		B3A25E67208C2BFA0089394C = {
 			isa = PBXGroup;
 			children = (
@@ -78,6 +93,7 @@
 		B3A25E8B208C2D210089394C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				B38FAF9420AB253E009AA8D3 /* ViewControllers */,
 				B3A25E8C208C2D2D0089394C /* ModelControllers */,
 			);
 			path = Controllers;
@@ -114,6 +130,7 @@
 		B3C5680C208D180B003FCD02 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				B38FAF9720AB27F7009AA8D3 /* OilChangeTracker.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -177,6 +194,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3A25E7E208C2BFB0089394C /* LaunchScreen.storyboard in Resources */,
+				B38FAF9820AB27F7009AA8D3 /* OilChangeTracker.storyboard in Resources */,
 				B3A25E7B208C2BFB0089394C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -190,8 +208,10 @@
 			files = (
 				B3A25E8A208C2C900089394C /* OilChange.swift in Sources */,
 				B3A25E88208C2C530089394C /* Vehicle.swift in Sources */,
+				B38FAF9620AB25DA009AA8D3 /* VehiclesTableViewController.swift in Sources */,
 				B3C56805208D04C2003FCD02 /* LocalFileVehiclePersistenceController.swift in Sources */,
 				B3A25E74208C2BFA0089394C /* AppDelegate.swift in Sources */,
+				B35D9EDE20AE0F0500586132 /* CurrentVehicleViewController.swift in Sources */,
 				B3A25E8E208C2D420089394C /* VehicleController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
