@@ -15,9 +15,6 @@ class VehiclesTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-//         Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-         self.navigationItem.rightBarButtonItem = self.editButtonItem
         
         //Add a blank footer to the tableview to hide extra lines after the last entry.
         tableView.tableFooterView = UIView(frame: CGRect.zero)
@@ -57,6 +54,14 @@ class VehiclesTableViewController: UITableViewController {
         }    
     }
     */
+    
+    func enterEditingMode(){
+        tableView.setEditing(true, animated: true)
+    }
+    
+    func finishEditing(){
+        tableView.setEditing(false, animated: true)
+    }
 
     // Override to support rearranging the table view.
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {

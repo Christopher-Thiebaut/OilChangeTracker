@@ -6,17 +6,72 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--All Vehicles View Controller-->
+        <scene sceneID="osG-V7-RhM">
+            <objects>
+                <viewController id="VHz-JS-Zf3" customClass="AllVehiclesViewController" customModule="OilChangeTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SVa-g7-wKu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sbv-Wd-1R1">
+                                <rect key="frame" x="0.0" y="64" width="375" height="553"/>
+                                <connections>
+                                    <segue destination="W2j-jh-bJy" kind="embed" id="ONa-s8-FRU"/>
+                                </connections>
+                            </containerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XNF-EI-asO">
+                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                                <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="F8y-YK-y5H"/>
+                                </constraints>
+                                <state key="normal" title="Add New Vehicle">
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="cY2-fm-35X" kind="show" id="K8e-d4-43R"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="XNF-EI-asO" firstAttribute="leading" secondItem="ovK-yL-7Hj" secondAttribute="leading" id="1cg-5K-dHJ"/>
+                            <constraint firstItem="ovK-yL-7Hj" firstAttribute="bottom" secondItem="XNF-EI-asO" secondAttribute="bottom" id="1pH-rm-g3p"/>
+                            <constraint firstItem="sbv-Wd-1R1" firstAttribute="leading" secondItem="ovK-yL-7Hj" secondAttribute="leading" id="560-Lv-5hc"/>
+                            <constraint firstItem="sbv-Wd-1R1" firstAttribute="top" secondItem="ovK-yL-7Hj" secondAttribute="top" id="Mb4-bI-Pj8"/>
+                            <constraint firstItem="XNF-EI-asO" firstAttribute="top" secondItem="sbv-Wd-1R1" secondAttribute="bottom" id="UdG-U9-UMN"/>
+                            <constraint firstItem="ovK-yL-7Hj" firstAttribute="trailing" secondItem="XNF-EI-asO" secondAttribute="trailing" id="ZEH-hz-OOz"/>
+                            <constraint firstItem="ovK-yL-7Hj" firstAttribute="trailing" secondItem="sbv-Wd-1R1" secondAttribute="trailing" id="eUg-pM-ybW"/>
+                            <constraint firstItem="XNF-EI-asO" firstAttribute="top" secondItem="sbv-Wd-1R1" secondAttribute="bottom" id="vPt-qW-pBA"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ovK-yL-7Hj"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="w0p-u8-o2Q">
+                        <barButtonItem key="rightBarButtonItem" title="Edit" id="5sQ-oR-FuK">
+                            <connections>
+                                <action selector="editButtonTapped:" destination="VHz-JS-Zf3" id="UGY-KZ-idL"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="editButton" destination="5sQ-oR-FuK" id="wMj-8h-Sq1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kI4-Gj-dd2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="943" y="672"/>
+        </scene>
         <!--Vehicles Table View Controller-->
         <scene sceneID="Mdp-dV-wpf">
             <objects>
                 <tableViewController id="W2j-jh-bJy" customClass="VehiclesTableViewController" customModule="OilChangeTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="yH7-hf-We0">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="553"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
@@ -47,7 +102,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F5e-zg-Pxa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="854" y="-102"/>
+            <point key="canvasLocation" x="942" y="39"/>
         </scene>
         <!--Current Vehicle View Controller-->
         <scene sceneID="3SD-XE-YPn">
@@ -58,51 +113,127 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wtw-p4-kNS">
-                                <rect key="frame" x="0.0" y="334" width="375" height="333"/>
+                                <rect key="frame" x="0.0" y="212" width="375" height="405"/>
                                 <connections>
                                     <segue destination="W6X-pG-fXO" kind="embed" id="yB8-sm-8Xf"/>
                                 </connections>
                             </containerView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="aCl-q4-pvL">
+                                <rect key="frame" x="8" y="72" width="359" height="132"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Change Oil By:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I43-Y7-Mdy">
+                                        <rect key="frame" x="0.0" y="0.0" width="160.5" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(odometer reading)" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jzp-lY-MDw">
+                                        <rect key="frame" x="0.0" y="38" width="359" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(date)" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M7M-hJ-NUn">
+                                        <rect key="frame" x="0.0" y="70" width="359" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Oil Change History:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8hH-J7-zif">
+                                        <rect key="frame" x="0.0" y="102" width="209.5" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="M7M-hJ-NUn" firstAttribute="width" secondItem="aCl-q4-pvL" secondAttribute="width" id="ZSa-iH-50f"/>
+                                    <constraint firstItem="jzp-lY-MDw" firstAttribute="width" secondItem="aCl-q4-pvL" secondAttribute="width" id="e5R-dt-MW3"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Bc-rf-a3x">
+                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                                <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="m4h-du-TPy"/>
+                                </constraints>
+                                <state key="normal" title="I Changed The Oil!">
+                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="ZcL-r0-aUz" kind="show" id="VmR-hu-832"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Wtw-p4-kNS" firstAttribute="centerX" secondItem="8rT-kO-jtl" secondAttribute="centerX" id="D6D-m1-jkK"/>
-                            <constraint firstItem="8rT-kO-jtl" firstAttribute="bottom" secondItem="Wtw-p4-kNS" secondAttribute="bottom" id="Es6-dZ-a7W"/>
+                            <constraint firstItem="aCl-q4-pvL" firstAttribute="leading" secondItem="8rT-kO-jtl" secondAttribute="leading" constant="8" id="Euo-kU-bEY"/>
+                            <constraint firstItem="8rT-kO-jtl" firstAttribute="trailing" secondItem="aCl-q4-pvL" secondAttribute="trailing" constant="8" id="K2g-cn-Ifp"/>
+                            <constraint firstItem="Wtw-p4-kNS" firstAttribute="top" secondItem="aCl-q4-pvL" secondAttribute="bottom" constant="8" id="LY6-mk-7Hy"/>
+                            <constraint firstItem="8rT-kO-jtl" firstAttribute="bottom" secondItem="6Bc-rf-a3x" secondAttribute="bottom" id="MP2-DM-yHn"/>
+                            <constraint firstItem="aCl-q4-pvL" firstAttribute="top" secondItem="8rT-kO-jtl" secondAttribute="top" constant="8" id="Oxc-QN-2Fc"/>
+                            <constraint firstItem="6Bc-rf-a3x" firstAttribute="top" secondItem="Wtw-p4-kNS" secondAttribute="bottom" id="Thy-rg-aNb"/>
+                            <constraint firstItem="8rT-kO-jtl" firstAttribute="trailing" secondItem="6Bc-rf-a3x" secondAttribute="trailing" id="a6U-PZ-XJa"/>
                             <constraint firstItem="Wtw-p4-kNS" firstAttribute="width" secondItem="I8O-pa-bR6" secondAttribute="width" id="eyd-1B-C6a"/>
-                            <constraint firstItem="Wtw-p4-kNS" firstAttribute="height" secondItem="I8O-pa-bR6" secondAttribute="height" multiplier="0.5" id="ld4-Dl-rQu"/>
+                            <constraint firstItem="6Bc-rf-a3x" firstAttribute="leading" secondItem="8rT-kO-jtl" secondAttribute="leading" id="hd3-dS-yJi"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8rT-kO-jtl"/>
                     </view>
                     <navigationItem key="navigationItem" id="QuW-WR-GKP">
                         <barButtonItem key="rightBarButtonItem" title="All Vehicles" id="jid-p4-48Y">
                             <connections>
-                                <segue destination="W2j-jh-bJy" kind="show" id="PIG-p3-Fuf"/>
+                                <segue destination="VHz-JS-Zf3" kind="show" id="X3S-qU-kHc"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="nextOilChangeDateLabel" destination="M7M-hJ-NUn" id="7h7-My-4G7"/>
+                        <outlet property="nextOilChangeOdometerReadingLabel" destination="jzp-lY-MDw" id="3tk-BH-MTY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J3u-by-rdh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="63" y="672"/>
+            <point key="canvasLocation" x="61.600000000000001" y="671.51424287856082"/>
         </scene>
-        <!--Table View Controller-->
-        <scene sceneID="yQF-wc-Usz">
+        <!--View Controller-->
+        <scene sceneID="sXq-Ys-P9E">
             <objects>
-                <tableViewController id="W6X-pG-fXO" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="hQ6-Ps-QFZ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="333"/>
+                <viewController id="ZcL-r0-aUz" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="nU2-Ai-nDp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="0fc-jw-Rdt">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0fc-jw-Rdt" id="6xf-0c-lOS">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
+                        <viewLayoutGuide key="safeArea" id="1ud-A2-Or8"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UYZ-fG-eMw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="62" y="1411"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="mjO-9q-B7w">
+            <objects>
+                <viewController id="cY2-fm-35X" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SSZ-SE-MQf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="U29-Wi-oXl"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BLr-2V-K3h" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="942" y="1411"/>
+        </scene>
+        <!--Oil Changes Table View Controller-->
+        <scene sceneID="yQF-wc-Usz">
+            <objects>
+                <tableViewController id="W6X-pG-fXO" customClass="OilChangesTableViewController" customModule="OilChangeTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="hQ6-Ps-QFZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="405"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <connections>
                             <outlet property="dataSource" destination="W6X-pG-fXO" id="pan-wY-RpZ"/>
                             <outlet property="delegate" destination="W6X-pG-fXO" id="kod-it-EGJ"/>
@@ -111,7 +242,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xyk-Lu-eQL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1489" y="693"/>
+            <point key="canvasLocation" x="62" y="72"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="5df-6e-eqh">
@@ -127,7 +258,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W78-0R-XyR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1170" y="-102"/>
+            <point key="canvasLocation" x="-780" y="672"/>
         </scene>
     </scenes>
 </document>

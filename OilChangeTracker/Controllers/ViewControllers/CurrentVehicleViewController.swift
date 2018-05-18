@@ -11,7 +11,9 @@ import UIKit
 class CurrentVehicleViewController: UIViewController {
     
     var vehicle: Vehicle?
-
+    @IBOutlet weak var nextOilChangeOdometerReadingLabel: UILabel!
+    @IBOutlet weak var nextOilChangeDateLabel: UILabel!
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         vehicle = VehicleController.shared.currentVehicle
@@ -24,6 +26,14 @@ class CurrentVehicleViewController: UIViewController {
     
     private func displayVehicle(_ vehicle: Vehicle) {
         self.title = vehicle.name
+        if let lastOilChange = vehicle.lastOilChange {
+            let lastOilChangeLife = min(lastOilChange.oilLife, lastOilChange.filterLife)
+            nextOilChangeDateLabel.text = lastOilChange.date.addingTimeInterval(lastOilChangeLife).description
+            nextOilChangeOdometerReadingLabel.text = "\(lastOilChange.odometerReading + vehicle.milesBetweenOilChanges) miles"
+        }else{
+            nextOilChangeDateLabel.text = nil
+            nextOilChangeOdometerReadingLabel.text = "Please enter information for your most recent oil change to get an estimate of when the next is due."
+        }
     }
     
     private func eraseDisplay(){
