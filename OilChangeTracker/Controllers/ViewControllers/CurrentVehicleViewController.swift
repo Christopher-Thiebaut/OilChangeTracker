@@ -14,6 +14,11 @@ class CurrentVehicleViewController: UIViewController {
     @IBOutlet weak var nextOilChangeOdometerReadingLabel: UILabel!
     @IBOutlet weak var nextOilChangeDateLabel: UILabel!
     
+    override func viewDidLoad() {
+        navigationController?.navigationBar.tintColor = .orange
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.orange]
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         vehicle = VehicleController.shared.currentVehicle

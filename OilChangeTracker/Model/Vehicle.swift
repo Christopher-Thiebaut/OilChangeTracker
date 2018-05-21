@@ -11,7 +11,7 @@ import Foundation
 class Vehicle: Codable, Equatable {
     var name: String
     var timeIntervalBetweenOilChanges: TimeInterval
-    var oilChanges: [OilChange]
+    private (set) var oilChanges: [OilChange]
     var lastOilChange: OilChange? {
         didSet {
             if let lastOilChange = lastOilChange {

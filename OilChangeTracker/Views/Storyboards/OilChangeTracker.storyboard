@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jrU-Ir-FhY">
-    <device id="retina4_0" orientation="portrait">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,17 +15,17 @@
             <objects>
                 <viewController id="VHz-JS-Zf3" customClass="AllVehiclesViewController" customModule="OilChangeTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SVa-g7-wKu">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sbv-Wd-1R1">
-                                <rect key="frame" x="0.0" y="64" width="320" height="454"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="553"/>
                                 <connections>
                                     <segue destination="W2j-jh-bJy" kind="embed" id="ONa-s8-FRU"/>
                                 </connections>
                             </containerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XNF-EI-asO">
-                                <rect key="frame" x="0.0" y="518" width="320" height="50"/>
+                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
                                 <color key="backgroundColor" red="0.50980392159999999" green="0.83529411760000005" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="F8y-YK-y5H"/>
@@ -53,6 +53,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="w0p-u8-o2Q">
                         <barButtonItem key="rightBarButtonItem" title="Edit" id="5sQ-oR-FuK">
+                            <color key="tintColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="editButtonTapped:" destination="VHz-JS-Zf3" id="UGY-KZ-idL"/>
                             </connections>
@@ -71,19 +72,19 @@
             <objects>
                 <tableViewController id="W2j-jh-bJy" customClass="VehiclesTableViewController" customModule="OilChangeTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="yH7-hf-We0">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="454"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="553"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="VehicleCell" textLabel="YJx-FK-c5C" style="IBUITableViewCellStyleDefault" id="QG8-Nk-2Gk">
-                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QG8-Nk-2Gk" id="DfG-Sp-CZl">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="YJx-FK-c5C">
-                                            <rect key="frame" x="16" y="0.0" width="288" height="43.5"/>
+                                            <rect key="frame" x="16" y="0.0" width="343" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -109,17 +110,17 @@
             <objects>
                 <viewController id="MfE-DK-qhf" customClass="CurrentVehicleViewController" customModule="OilChangeTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="I8O-pa-bR6">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wtw-p4-kNS">
-                                <rect key="frame" x="0.0" y="212" width="320" height="306"/>
+                                <rect key="frame" x="0.0" y="212" width="375" height="405"/>
                                 <connections>
                                     <segue destination="W6X-pG-fXO" kind="embed" id="yB8-sm-8Xf"/>
                                 </connections>
                             </containerView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="aCl-q4-pvL">
-                                <rect key="frame" x="8" y="72" width="304" height="132"/>
+                                <rect key="frame" x="8" y="72" width="359" height="132"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Change Oil By:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I43-Y7-Mdy">
                                         <rect key="frame" x="0.0" y="0.0" width="160.5" height="30"/>
@@ -128,13 +129,13 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(odometer reading)" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jzp-lY-MDw">
-                                        <rect key="frame" x="0.0" y="38" width="304" height="24"/>
+                                        <rect key="frame" x="0.0" y="38" width="359" height="24"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(date)" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M7M-hJ-NUn">
-                                        <rect key="frame" x="0.0" y="70" width="304" height="24"/>
+                                        <rect key="frame" x="0.0" y="70" width="359" height="24"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -152,7 +153,7 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Bc-rf-a3x">
-                                <rect key="frame" x="0.0" y="518" width="320" height="50"/>
+                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
                                 <color key="backgroundColor" red="0.50789135689999998" green="0.83667033909999999" blue="0.32535755630000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="m4h-du-TPy"/>
@@ -181,7 +182,11 @@
                         <viewLayoutGuide key="safeArea" id="8rT-kO-jtl"/>
                     </view>
                     <navigationItem key="navigationItem" id="QuW-WR-GKP">
+                        <barButtonItem key="leftBarButtonItem" title="Edit Vehicle" id="eVa-63-17T">
+                            <color key="tintColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="All Vehicles" id="jid-p4-48Y">
+                            <color key="tintColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <segue destination="VHz-JS-Zf3" kind="show" id="X3S-qU-kHc"/>
                             </connections>
@@ -201,106 +206,113 @@
             <objects>
                 <viewController id="ZcL-r0-aUz" customClass="OilChangeEditorViewController" customModule="OilChangeTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nU2-Ai-nDp">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="306"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="uzx-IC-hAp">
-                                <rect key="frame" x="8" y="8" width="304" height="290"/>
+                                <rect key="frame" x="8" y="72" width="359" height="533"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Odometer Reading:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gxj-7I-m13">
-                                        <rect key="frame" x="0.0" y="0.0" width="304" height="22.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="359" height="49.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OtU-jj-gDr">
-                                        <rect key="frame" x="0.0" y="26.5" width="304" height="23"/>
+                                        <rect key="frame" x="0.0" y="53.5" width="359" height="50"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gw3-TS-JZM">
-                                        <rect key="frame" x="0.0" y="53.5" width="304" height="22.5"/>
+                                        <rect key="frame" x="0.0" y="107.5" width="359" height="49.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CiO-As-nIb">
-                                        <rect key="frame" x="0.0" y="80" width="304" height="23"/>
+                                        <rect key="frame" x="0.0" y="161" width="359" height="50"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Oil Life:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NCh-rP-Q2A">
-                                        <rect key="frame" x="0.0" y="107" width="304" height="22.5"/>
+                                        <rect key="frame" x="0.0" y="215" width="359" height="49.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eGQ-t4-RRu">
-                                        <rect key="frame" x="0.0" y="133.5" width="304" height="23"/>
+                                        <rect key="frame" x="0.0" y="268.5" width="359" height="49.5"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filter Life:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VYA-Zt-iY1">
-                                        <rect key="frame" x="0.0" y="160.5" width="304" height="22.5"/>
+                                        <rect key="frame" x="0.0" y="322" width="359" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6gA-2v-OIR">
-                                        <rect key="frame" x="0.0" y="187" width="304" height="23"/>
+                                        <rect key="frame" x="0.0" y="376" width="359" height="49.5"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zPM-5j-QoX">
-                                        <rect key="frame" x="0.0" y="214" width="304" height="22.5"/>
+                                        <rect key="frame" x="0.0" y="429.5" width="359" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CNa-bt-iRk">
-                                        <rect key="frame" x="0.0" y="240.5" width="304" height="23"/>
+                                        <rect key="frame" x="0.0" y="483.5" width="359" height="49.5"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" textContentType="location"/>
                                     </textField>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="2sw-df-bbG">
-                                        <rect key="frame" x="0.0" y="267.5" width="304" height="22.5"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uGs-6U-jZ0">
-                                                <rect key="frame" x="0.0" y="0.0" width="152" height="22.5"/>
-                                                <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <state key="normal" title="Cancel">
-                                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="deleteButtonTapped:" destination="ZcL-r0-aUz" eventType="touchUpInside" id="8Ya-9w-jCC"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="McP-Mq-P44">
-                                                <rect key="frame" x="152" y="0.0" width="152" height="22.5"/>
-                                                <color key="backgroundColor" red="0.50980392159999999" green="0.83529411760000005" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <state key="normal" title="Done">
-                                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="saveButtonTapped:" destination="ZcL-r0-aUz" eventType="touchUpInside" id="lvd-BM-e4v"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
                                 </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="2sw-df-bbG">
+                                <rect key="frame" x="8" y="609" width="359" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uGs-6U-jZ0">
+                                        <rect key="frame" x="0.0" y="0.0" width="179.5" height="50"/>
+                                        <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Cancel">
+                                            <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="deleteButtonTapped:" destination="ZcL-r0-aUz" eventType="touchUpInside" id="8Ya-9w-jCC"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="McP-Mq-P44">
+                                        <rect key="frame" x="179.5" y="0.0" width="179.5" height="50"/>
+                                        <color key="backgroundColor" red="0.50980392159999999" green="0.83529411760000005" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Done">
+                                            <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="saveButtonTapped:" destination="ZcL-r0-aUz" eventType="touchUpInside" id="lvd-BM-e4v"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="bmu-Kd-3mc"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="1ud-A2-Or8" firstAttribute="trailing" secondItem="2sw-df-bbG" secondAttribute="trailing" constant="8" id="3zW-Cs-6ca"/>
                             <constraint firstItem="1ud-A2-Or8" firstAttribute="trailing" secondItem="uzx-IC-hAp" secondAttribute="trailing" constant="8" id="FAI-i3-Vuu"/>
+                            <constraint firstItem="1ud-A2-Or8" firstAttribute="bottom" secondItem="2sw-df-bbG" secondAttribute="bottom" constant="8" id="IM1-EZ-gUe"/>
                             <constraint firstItem="uzx-IC-hAp" firstAttribute="top" secondItem="1ud-A2-Or8" secondAttribute="top" constant="8" id="Nmi-WI-iGj"/>
+                            <constraint firstItem="2sw-df-bbG" firstAttribute="top" secondItem="uzx-IC-hAp" secondAttribute="bottom" constant="4" id="bEX-xY-jBH"/>
                             <constraint firstItem="uzx-IC-hAp" firstAttribute="leading" secondItem="1ud-A2-Or8" secondAttribute="leading" constant="8" id="bqW-9s-ItH"/>
-                            <constraint firstItem="1ud-A2-Or8" firstAttribute="bottom" secondItem="uzx-IC-hAp" secondAttribute="bottom" constant="8" id="eaW-pj-JP5"/>
+                            <constraint firstItem="1ud-A2-Or8" firstAttribute="bottom" secondItem="uzx-IC-hAp" secondAttribute="bottom" constant="62" id="eaW-pj-JP5"/>
+                            <constraint firstItem="2sw-df-bbG" firstAttribute="leading" secondItem="1ud-A2-Or8" secondAttribute="leading" constant="8" id="ii9-MS-9b4"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1ud-A2-Or8"/>
                     </view>
@@ -316,29 +328,110 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UYZ-fG-eMw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="120" y="1376"/>
+            <point key="canvasLocation" x="60" y="1514"/>
         </scene>
-        <!--View Controller-->
+        <!--Vehicle Editor View Controller-->
         <scene sceneID="mjO-9q-B7w">
             <objects>
-                <viewController id="cY2-fm-35X" sceneMemberID="viewController">
+                <viewController id="cY2-fm-35X" customClass="VehicleEditorViewController" customModule="OilChangeTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SSZ-SE-MQf">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="mZx-JH-oSZ">
+                                <rect key="frame" x="8" y="72" width="359" height="533"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vehicle Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qJt-W0-HRH">
+                                        <rect key="frame" x="0.0" y="0.0" width="359" height="89"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="36B-eL-DuS">
+                                        <rect key="frame" x="0.0" y="89" width="359" height="88.5"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Manufacturer Recommended Time Between Oil Changes (Months):" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YMc-e0-ljv">
+                                        <rect key="frame" x="0.0" y="177.5" width="359" height="89"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j6m-dA-ytC">
+                                        <rect key="frame" x="0.0" y="266.5" width="359" height="89"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Odometer Reading:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RdR-3n-j4F">
+                                        <rect key="frame" x="0.0" y="355.5" width="359" height="88.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p6b-ZY-zSE">
+                                        <rect key="frame" x="0.0" y="444" width="359" height="89"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="noF-Z7-CLy">
+                                <rect key="frame" x="8" y="609" width="359" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jm0-P8-pmj">
+                                        <rect key="frame" x="0.0" y="0.0" width="179.5" height="50"/>
+                                        <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Cancel">
+                                            <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="deleteButtonTapped:" destination="ZcL-r0-aUz" eventType="touchUpInside" id="fGb-NM-VAi"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DMG-DH-Ax2">
+                                        <rect key="frame" x="179.5" y="0.0" width="179.5" height="50"/>
+                                        <color key="backgroundColor" red="0.50980392159999999" green="0.83529411760000005" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Done">
+                                            <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="saveButtonTapped:" destination="ZcL-r0-aUz" eventType="touchUpInside" id="B6J-Gl-j4n"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Ucg-Qy-45x"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="U29-Wi-oXl" firstAttribute="trailing" secondItem="noF-Z7-CLy" secondAttribute="trailing" constant="8" id="6wm-tI-yKs"/>
+                            <constraint firstItem="U29-Wi-oXl" firstAttribute="bottom" secondItem="mZx-JH-oSZ" secondAttribute="bottom" constant="62" id="7vR-y7-T0F"/>
+                            <constraint firstItem="mZx-JH-oSZ" firstAttribute="leading" secondItem="U29-Wi-oXl" secondAttribute="leading" constant="8" id="CeW-CE-Kyi"/>
+                            <constraint firstItem="mZx-JH-oSZ" firstAttribute="top" secondItem="U29-Wi-oXl" secondAttribute="top" constant="8" id="JyS-8w-l0d"/>
+                            <constraint firstItem="noF-Z7-CLy" firstAttribute="leading" secondItem="U29-Wi-oXl" secondAttribute="leading" constant="8" id="SGr-Xz-4sK"/>
+                            <constraint firstAttribute="trailing" secondItem="mZx-JH-oSZ" secondAttribute="trailing" constant="8" id="UaE-fb-08D"/>
+                            <constraint firstItem="noF-Z7-CLy" firstAttribute="top" secondItem="mZx-JH-oSZ" secondAttribute="bottom" constant="4" id="a84-TG-zeE"/>
+                            <constraint firstItem="U29-Wi-oXl" firstAttribute="bottom" secondItem="noF-Z7-CLy" secondAttribute="bottom" constant="8" id="b7u-cd-bCj"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="U29-Wi-oXl"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BLr-2V-K3h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="942" y="1411"/>
+            <point key="canvasLocation" x="941" y="1514"/>
         </scene>
         <!--Oil Changes Table View Controller-->
         <scene sceneID="yQF-wc-Usz">
             <objects>
                 <tableViewController id="W6X-pG-fXO" customClass="OilChangesTableViewController" customModule="OilChangeTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="hQ6-Ps-QFZ">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="306"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="405"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <connections>
@@ -359,7 +452,7 @@
             <objects>
                 <navigationController id="jrU-Ir-FhY" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="PNC-ir-ND0">
-                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -372,6 +465,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="PJZ-7c-Idy"/>
+        <segue reference="VmR-hu-832"/>
     </inferredMetricsTieBreakers>
 </document>
