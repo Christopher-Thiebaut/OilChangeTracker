@@ -13,6 +13,7 @@ class OilChangesTableViewController: UITableViewController {
     var vehicleController = VehicleController.shared
     var oilChanges: [OilChange] = []
     let cellReuseID = OilChangeTableViewCell.cellClassName
+    let toOilChangeEditorSegueID = "toOilChangeEditor"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,7 +47,7 @@ class OilChangesTableViewController: UITableViewController {
         }
     }
     
-    //Hides unnessary separators after last entry in table by adding an empty footer view.
+    ///Hides unnessary separators after last entry in table by adding an empty footer view.
     private func hideEmptySeparators(){
         let emptyView = UIView(frame: CGRect.zero)
         tableView.tableFooterView = emptyView
@@ -65,51 +66,27 @@ class OilChangesTableViewController: UITableViewController {
         oilChangeCell.displayOilChange(oilChange)
         return oilChangeCell
     }
- 
 
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        guard let vehicle = vehicleController.currentVehicle else { return }
         if editingStyle == .delete {
-            // Delete the row from the data source
+            let oilChange = oilChanges[indexPath.row]
+            vehicleController.removeOilChange(oilChange, from: vehicle)
             tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
     }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: toOilChangeEditorSegueID, sender: tableView.cellForRow(at: indexPath))
     }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        guard let oilChangeEditor = segue.destination as? OilChangeEditorViewController, let oilChangeIndex = tableView.indexPathForSelectedRow?.row else {
+            return
+        }
+        let selectedOilChange = oilChanges[oilChangeIndex]
+        oilChangeEditor.oilChange = selectedOilChange
     }
-    */
 
 }

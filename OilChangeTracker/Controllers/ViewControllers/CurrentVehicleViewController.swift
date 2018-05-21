@@ -29,7 +29,7 @@ class CurrentVehicleViewController: UIViewController {
         if let lastOilChange = vehicle.lastOilChange {
             let lastOilChangeLife = min(lastOilChange.oilLife, lastOilChange.filterLife)
             nextOilChangeDateLabel.text = lastOilChange.date.addingTimeInterval(lastOilChangeLife).description
-            nextOilChangeOdometerReadingLabel.text = "\(lastOilChange.odometerReading + vehicle.milesBetweenOilChanges) miles"
+            nextOilChangeOdometerReadingLabel.text = "\(lastOilChange.odometerReading + lastOilChangeLife) miles"
         }else{
             nextOilChangeDateLabel.text = nil
             nextOilChangeOdometerReadingLabel.text = "Please enter information for your most recent oil change to get an estimate of when the next is due."

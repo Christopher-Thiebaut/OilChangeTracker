@@ -48,7 +48,11 @@ class LocalFileVehiclePersistenceManager: VehiclePersistenceManager {
         }
     }
     
-    func loadCurrentVehicle(completion: @escaping (Vehicle?, Error?) -> Void) {
+    
+    /**
+     Loads information about the current vehicle from the last launch.  NOTE: Since the returned instance is initialized directly from the file, it is not the same instance as that same vehicle's representation in the result of a call to loadAllVehicles.
+     */
+    func loadCurrentVehicleInfo(completion: @escaping (Vehicle?, Error?) -> Void) {
         do {
             let data = try Data(contentsOf: getLocalURL(for: LocalFileVehiclePersistenceManager.currentVehicleFileName))
             let vehicle = try JSONDecoder().decode(Vehicle.self, from: data)

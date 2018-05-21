@@ -10,7 +10,7 @@ import Foundation
 
 protocol VehiclePersistenceManager {
     func loadAllVehicles(completion: @escaping ([Vehicle]?, Error?) -> Void)
-    func loadCurrentVehicle(completion: @escaping (Vehicle?, Error?) -> Void)
+    func loadCurrentVehicleInfo(completion: @escaping (Vehicle?, Error?) -> Void)
     func save(_ vehicles: [Vehicle])
     func updateCurrentVehicle(to vehicle: Vehicle?)
 }
@@ -37,6 +37,10 @@ class VehicleController {
         self.persistenceManager = persistenceManager
         loadVehiclesFromPersistentStore()
         loadCurrentVehicleFromPersistentStore()
+        if vehicles.count == 0 {
+            let test = Vehicle(name: "Test", timeIntervalBetweenOilChanges: 6_000_000, odometerReading: 15_000)
+            addVehicle(test)
+        }
     }
     
     private func loadVehiclesFromPersistentStore() {
@@ -49,9 +53,9 @@ class VehicleController {
     }
     
     private func loadCurrentVehicleFromPersistentStore() {
-        persistenceManager.loadCurrentVehicle {[weak self] (vehicle, _) in
-            if let vehicle = vehicle {
-                self?.currentVehicle = vehicle
+        persistenceManager.loadCurrentVehicleInfo {[weak self] (vehicle, _) in
+            if let vehicle = vehicle, let currentVehicleIndex = self?.vehicles.index(of: vehicle), let strongSelf = self {
+                strongSelf.currentVehicle = strongSelf.vehicles[currentVehicleIndex]
             }else{
                 self?.currentVehicle = self?.vehicles.first
             }
@@ -80,7 +84,6 @@ class VehicleController {
     
     func addOilChange(_ oilChange: OilChange,to vehicle: Vehicle){
         guard let indexOfVehicle = vehicles.index(of: vehicle) else { return }
-        oilChange.vehicle = vehicle
         vehicles[indexOfVehicle].addOilChange(oilChange)
         save()
     }
@@ -97,12 +100,6 @@ class VehicleController {
         vehicles[indexToEdit].odometerReading = mileage
     }
     
-    func updateMilesBetweenOilChanges(_ vehicle: Vehicle, to miles: Double){
-        guard let indexToEdit = vehicles.index(of: vehicle) else { return }
-        vehicles[indexToEdit].milesBetweenOilChanges = miles
-        save()
-    }
-    
     func updateTimeIntervalBetweenOilChanges(_ vehicle: Vehicle, to timeInterval: TimeInterval){
         guard let indexToEdit = vehicles.index(of: vehicle) else { return }
         vehicles[indexToEdit].timeIntervalBetweenOilChanges = timeInterval
@@ -117,6 +114,11 @@ class VehicleController {
     
     func updateFilterLife(for oilChange: OilChange, to filterLife: Double){
         oilChange.filterLife = filterLife
+        save()
+    }
+    
+    func updateOilLife(for oilChange: OilChange, to oilLife: Double){
+        oilChange.oilLife = oilLife
         save()
     }
     

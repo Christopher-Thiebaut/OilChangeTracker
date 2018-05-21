@@ -10,23 +10,27 @@ import Foundation
 
 class Vehicle: Codable, Equatable {
     var name: String
-    var milesBetweenOilChanges: Double
     var timeIntervalBetweenOilChanges: TimeInterval
-    private (set) var oilChanges: [OilChange]
-    var lastOilChange: OilChange?
+    var oilChanges: [OilChange]
+    var lastOilChange: OilChange? {
+        didSet {
+            if let lastOilChange = lastOilChange {
+                odometerReading = lastOilChange.odometerReading
+            }
+        }
+    }
     var vin: String?
     var odometerReading: Double
     
-    init(name: String, milesBetweenOilChanges: Double, timeIntervalBetweenOilChanges: TimeInterval, odometerReading: Double) {
+    init(name: String, timeIntervalBetweenOilChanges: TimeInterval, odometerReading: Double) {
         self.name = name
-        self.milesBetweenOilChanges = milesBetweenOilChanges
         self.oilChanges = []
         self.odometerReading = odometerReading
         self.timeIntervalBetweenOilChanges = timeIntervalBetweenOilChanges
     }
     
     static func == (lhs: Vehicle, rhs: Vehicle) -> Bool {
-        return lhs.name == rhs.name && lhs.milesBetweenOilChanges == rhs.milesBetweenOilChanges && lhs.oilChanges == rhs.oilChanges
+        return lhs.name == rhs.name && lhs.oilChanges == rhs.oilChanges && lhs.timeIntervalBetweenOilChanges == rhs.timeIntervalBetweenOilChanges && lhs.vin == rhs.vin
     }
     
     func addOilChange(_ oilChange: OilChange){
@@ -43,6 +47,7 @@ class Vehicle: Codable, Equatable {
         guard let indexToRemove = oilChanges.index(of: oilChange) else { return }
         oilChanges.remove(at: indexToRemove)
         sortOilChangesByMileage()
+        lastOilChange = oilChanges.first
     }
     
     func sortOilChangesByMileage() {
