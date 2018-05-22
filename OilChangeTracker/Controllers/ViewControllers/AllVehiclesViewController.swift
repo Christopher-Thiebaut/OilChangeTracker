@@ -13,7 +13,6 @@ class AllVehiclesViewController: UIViewController {
     var tableViewController: VehiclesTableViewController?
     @IBOutlet weak var editButton: UIBarButtonItem!
     
-    
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.

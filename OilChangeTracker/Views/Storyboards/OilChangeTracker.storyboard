@@ -191,13 +191,14 @@
                         <barButtonItem key="rightBarButtonItem" title="All Vehicles" id="jid-p4-48Y">
                             <color key="tintColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
-                                <segue destination="VHz-JS-Zf3" kind="show" id="X3S-qU-kHc"/>
+                                <segue destination="VHz-JS-Zf3" kind="show" identifier="toAllVehiclesVC" id="X3S-qU-kHc"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="nextOilChangeDateLabel" destination="M7M-hJ-NUn" id="7h7-My-4G7"/>
                         <outlet property="nextOilChangeOdometerReadingLabel" destination="jzp-lY-MDw" id="3tk-BH-MTY"/>
+                        <segue destination="cY2-fm-35X" kind="show" identifier="toVehicleEditorNoAnimation" animates="NO" id="QLM-55-LqA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J3u-by-rdh" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -344,38 +345,45 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="mZx-JH-oSZ">
                                 <rect key="frame" x="8" y="72" width="359" height="533"/>
                                 <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please Enter Vehicle Information" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BMj-Xh-JOe">
+                                        <rect key="frame" x="0.0" y="0.0" width="359" height="76"/>
+                                        <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vehicle Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qJt-W0-HRH">
-                                        <rect key="frame" x="0.0" y="0.0" width="359" height="89"/>
+                                        <rect key="frame" x="0.0" y="76" width="359" height="76.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="36B-eL-DuS">
-                                        <rect key="frame" x="0.0" y="89" width="359" height="88.5"/>
+                                        <rect key="frame" x="0.0" y="152.5" width="359" height="76"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Manufacturer Recommended Time Between Oil Changes (Months):" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YMc-e0-ljv">
-                                        <rect key="frame" x="0.0" y="177.5" width="359" height="89"/>
+                                        <rect key="frame" x="0.0" y="228.5" width="359" height="76"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j6m-dA-ytC">
-                                        <rect key="frame" x="0.0" y="266.5" width="359" height="89"/>
+                                        <rect key="frame" x="0.0" y="304.5" width="359" height="76"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Odometer Reading:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RdR-3n-j4F">
-                                        <rect key="frame" x="0.0" y="355.5" width="359" height="88.5"/>
+                                        <rect key="frame" x="0.0" y="380.5" width="359" height="76.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p6b-ZY-zSE">
-                                        <rect key="frame" x="0.0" y="444" width="359" height="89"/>
+                                        <rect key="frame" x="0.0" y="457" width="359" height="76"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
@@ -477,7 +485,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="AEK-1B-smt"/>
+        <segue reference="QLM-55-LqA"/>
         <segue reference="VmR-hu-832"/>
     </inferredMetricsTieBreakers>
 </document>

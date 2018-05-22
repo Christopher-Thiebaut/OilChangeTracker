@@ -37,10 +37,6 @@ class VehicleController {
         self.persistenceManager = persistenceManager
         loadVehiclesFromPersistentStore()
         loadCurrentVehicleFromPersistentStore()
-        if vehicles.count == 0 {
-            let test = Vehicle(name: "Test", timeIntervalBetweenOilChanges: 6_000_000, odometerReading: 15_000)
-            addVehicle(test)
-        }
     }
     
     private func loadVehiclesFromPersistentStore() {
@@ -79,6 +75,7 @@ class VehicleController {
         }else{
             vehicles.append(vehicle)
         }
+        currentVehicle = vehicle
         save()
     }
     

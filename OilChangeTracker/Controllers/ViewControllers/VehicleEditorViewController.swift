@@ -34,6 +34,7 @@ class VehicleEditorViewController: UIViewController, EditorViewController {
         }else{
             clearTextFields()
         }
+        hideBackNavigationIfFirstVehicle()
     }
     
     private func setButtonText(){
@@ -56,6 +57,12 @@ class VehicleEditorViewController: UIViewController, EditorViewController {
         vehicleNameTextField.text = nil
         monthsBetweenOilChangesTextField.text = nil
         odometerReadingTextField.text = nil
+    }
+    
+    private func hideBackNavigationIfFirstVehicle(){
+        let noVehiclesExist = vehicleController.vehicles.count < 1
+        navigationItem.hidesBackButton = noVehiclesExist
+        deleteButton.isHidden = noVehiclesExist
     }
 
     @IBAction func deleteButtonTapped(_ sender: Any) {

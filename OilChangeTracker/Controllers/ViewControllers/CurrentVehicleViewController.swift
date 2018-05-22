@@ -14,6 +14,8 @@ class CurrentVehicleViewController: UIViewController {
     @IBOutlet weak var nextOilChangeOdometerReadingLabel: UILabel!
     @IBOutlet weak var nextOilChangeDateLabel: UILabel!
     
+    let vehicleEditorNoAnimationSegueID = "toVehicleEditorNoAnimation"
+    
     override func viewDidLoad() {
         navigationController?.navigationBar.tintColor = .orange
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.orange]
@@ -25,7 +27,7 @@ class CurrentVehicleViewController: UIViewController {
         if let vehicle = vehicle {
             displayVehicle(vehicle)
         }else{
-            eraseDisplay()
+            instantlySegueToVehicleEditor()
         }
     }
     
@@ -41,8 +43,8 @@ class CurrentVehicleViewController: UIViewController {
         }
     }
     
-    private func eraseDisplay(){
-        self.title = nil
+    private func instantlySegueToVehicleEditor(){
+        performSegue(withIdentifier: vehicleEditorNoAnimationSegueID, sender: self)
     }
     
     // MARK: - Navigation
