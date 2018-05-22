@@ -15,13 +15,16 @@ class VehiclesTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         //Add a blank footer to the tableview to hide extra lines after the last entry.
         tableView.tableFooterView = UIView(frame: CGRect.zero)
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+    }
 
     // MARK: - Table view data source
-
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -43,17 +46,16 @@ class VehiclesTableViewController: UITableViewController {
         navigationController?.popViewController(animated: true)
     }
 
-    /*
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
+            let vehicleToRemove = vehicleController.vehicles[indexPath.row]
+            vehicleController.removeVehicleMatching(vehicleToRemove)
             tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
     }
-    */
+
     
     func enterEditingMode(){
         tableView.setEditing(true, animated: true)

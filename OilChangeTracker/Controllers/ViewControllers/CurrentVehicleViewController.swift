@@ -33,7 +33,7 @@ class CurrentVehicleViewController: UIViewController {
         self.title = vehicle.name
         if let lastOilChange = vehicle.lastOilChange {
             let lastOilChangeLife = min(lastOilChange.oilLife, lastOilChange.filterLife)
-            nextOilChangeDateLabel.text = lastOilChange.date.addingTimeInterval(lastOilChangeLife).description
+            nextOilChangeDateLabel.text = lastOilChange.date.addingTimeInterval(vehicle.timeIntervalBetweenOilChanges).description
             nextOilChangeOdometerReadingLabel.text = "\(lastOilChange.odometerReading + lastOilChangeLife) miles"
         }else{
             nextOilChangeDateLabel.text = nil
@@ -43,6 +43,14 @@ class CurrentVehicleViewController: UIViewController {
     
     private func eraseDisplay(){
         self.title = nil
+    }
+    
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let vehicleEditor = segue.destination as? VehicleEditorViewController else {
+            return
+        }
+        vehicleEditor.vehicle = vehicle
     }
 
 }

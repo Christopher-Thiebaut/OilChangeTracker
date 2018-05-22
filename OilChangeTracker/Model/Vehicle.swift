@@ -14,7 +14,7 @@ class Vehicle: Codable, Equatable {
     private (set) var oilChanges: [OilChange]
     var lastOilChange: OilChange? {
         didSet {
-            if let lastOilChange = lastOilChange {
+            if let lastOilChange = lastOilChange, lastOilChange.odometerReading > odometerReading {
                 odometerReading = lastOilChange.odometerReading
             }
         }

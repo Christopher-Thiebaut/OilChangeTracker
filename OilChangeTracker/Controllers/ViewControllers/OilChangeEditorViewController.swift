@@ -8,8 +8,8 @@
 
 import UIKit
 
-class OilChangeEditorViewController: UIViewController {
-
+class OilChangeEditorViewController: UIViewController, EditorViewController {
+    
     @IBOutlet private weak var odometerTextField: UITextField!
     @IBOutlet private weak var dateTextField: UITextField!
     @IBOutlet private weak var oilLifeTextField: UITextField!
@@ -117,21 +117,6 @@ class OilChangeEditorViewController: UIViewController {
         }
         navigationController?.popViewController(animated: true)
     }
-    
-    private func getNumberFromTextField(_ textField: UITextField) -> Double? {
-        guard let fieldText = textField.text else {
-            return nil
-        }
-        return Double(fieldText)
-    }
-    
-    private func notifyUserOfInvalidInput() {
-        let missingInputAlert = UIAlertController(title: "All fields are required.", message: "Please complete the entire form.", preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-        missingInputAlert.addAction(okAction)
-        present(missingInputAlert, animated: true, completion: nil)
-    }
-    
 }
 
 extension OilChangeEditorViewController: UITextFieldDelegate {

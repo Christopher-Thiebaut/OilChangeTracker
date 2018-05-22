@@ -184,6 +184,9 @@
                     <navigationItem key="navigationItem" id="QuW-WR-GKP">
                         <barButtonItem key="leftBarButtonItem" title="Edit Vehicle" id="eVa-63-17T">
                             <color key="tintColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <segue destination="cY2-fm-35X" kind="show" identifier="toVehicleEditorViewController" id="AEK-1B-smt"/>
+                            </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="All Vehicles" id="jid-p4-48Y">
                             <color key="tintColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -389,6 +392,7 @@
                                             <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
+                                            <action selector="deleteButtonTapped:" destination="cY2-fm-35X" eventType="touchUpInside" id="Jup-gP-upX"/>
                                             <action selector="deleteButtonTapped:" destination="ZcL-r0-aUz" eventType="touchUpInside" id="fGb-NM-VAi"/>
                                         </connections>
                                     </button>
@@ -400,6 +404,7 @@
                                         </state>
                                         <connections>
                                             <action selector="saveButtonTapped:" destination="ZcL-r0-aUz" eventType="touchUpInside" id="B6J-Gl-j4n"/>
+                                            <action selector="saveButtonTapped:" destination="cY2-fm-35X" eventType="touchUpInside" id="Zqi-J8-W5d"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -421,10 +426,17 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="U29-Wi-oXl"/>
                     </view>
+                    <connections>
+                        <outlet property="deleteButton" destination="Jm0-P8-pmj" id="GHB-9L-U7f"/>
+                        <outlet property="monthsBetweenOilChangesTextField" destination="j6m-dA-ytC" id="nt1-Xa-3su"/>
+                        <outlet property="odometerReadingTextField" destination="p6b-ZY-zSE" id="Xoy-Is-nBt"/>
+                        <outlet property="saveButton" destination="DMG-DH-Ax2" id="u2S-ox-QJ7"/>
+                        <outlet property="vehicleNameTextField" destination="36B-eL-DuS" id="E7i-nT-U1n"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BLr-2V-K3h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="941" y="1514"/>
+            <point key="canvasLocation" x="1030" y="1513"/>
         </scene>
         <!--Oil Changes Table View Controller-->
         <scene sceneID="yQF-wc-Usz">
@@ -465,6 +477,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="AEK-1B-smt"/>
         <segue reference="VmR-hu-832"/>
     </inferredMetricsTieBreakers>
 </document>

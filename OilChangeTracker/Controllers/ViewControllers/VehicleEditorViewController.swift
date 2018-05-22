@@ -8,28 +8,78 @@
 
 import UIKit
 
-class VehicleEditorViewController: UIViewController {
+class VehicleEditorViewController: UIViewController, EditorViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBOutlet weak var vehicleNameTextField: UITextField!
+    @IBOutlet weak var monthsBetweenOilChangesTextField: UITextField!
+    @IBOutlet weak var odometerReadingTextField: UITextField!
+    
+    @IBOutlet weak var deleteButton: UIButton!
+    @IBOutlet weak var saveButton: UIButton!
+    
+    let newVehicleSaveButtonText = "Done"
+    let oldVehicleSaveButtonText = "Save"
+    let newVehicleDeleteButtonText = "Cancel"
+    let oldVehicleDeleteButtonText = "Delete"
+    let secondsPerMonth: TimeInterval = 60*60*24*30
+    
+    var vehicle: Vehicle?
+    var vehicleController = VehicleController.shared
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setButtonText()
+        if let vehicle = vehicle {
+            setupFields(for: vehicle)
+        }else{
+            clearTextFields()
+        }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    private func setButtonText(){
+        if vehicle != nil {
+            deleteButton.setTitle(oldVehicleDeleteButtonText, for: .normal)
+            saveButton.setTitle(oldVehicleSaveButtonText, for: .normal)
+        }else{
+            deleteButton.setTitle(newVehicleDeleteButtonText, for: .normal)
+            saveButton.setTitle(newVehicleSaveButtonText, for: .normal)
+        }
     }
-    */
+    
+    private func setupFields(for vehicle: Vehicle){
+        vehicleNameTextField.text = vehicle.name
+        monthsBetweenOilChangesTextField.text = "\(Int(vehicle.timeIntervalBetweenOilChanges/secondsPerMonth))"
+        odometerReadingTextField.text = "\(vehicle.odometerReading)"
+    }
+    
+    private func clearTextFields(){
+        vehicleNameTextField.text = nil
+        monthsBetweenOilChangesTextField.text = nil
+        odometerReadingTextField.text = nil
+    }
 
+    @IBAction func deleteButtonTapped(_ sender: Any) {
+        if let vehicle = vehicle {
+            vehicleController.removeVehicleMatching(vehicle)
+        }
+        navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func saveButtonTapped(_ sender: Any) {
+        guard let monthsBetweenOilChanges = getNumberFromTextField(monthsBetweenOilChangesTextField), let odometerReading = getNumberFromTextField(odometerReadingTextField), let vehicleName = vehicleNameTextField.text, !vehicleName.isEmpty else {
+            notifyUserOfInvalidInput()
+            return
+        }
+        let secondsBetweenOilChanges = monthsBetweenOilChanges * secondsPerMonth
+        if let vehicle = vehicle {
+            vehicleController.updateNameOfVehicle(vehicle, to: vehicleName)
+            vehicleController.updateMileageOfVehicle(vehicle, to: odometerReading)
+            vehicleController.updateTimeIntervalBetweenOilChanges(vehicle, to: secondsBetweenOilChanges)
+        }else{
+            let vehicle = Vehicle(name: vehicleName, timeIntervalBetweenOilChanges: secondsBetweenOilChanges, odometerReading: odometerReading)
+            vehicleController.addVehicle(vehicle)
+        }
+        navigationController?.popViewController(animated: true)
+    }
+    
 }
