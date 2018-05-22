@@ -21,20 +21,20 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="UYF-XL-fLa">
-                        <rect key="frame" x="28" y="15" width="453" height="159"/>
+                        <rect key="frame" x="4" y="11" width="501" height="167"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="G98-X0-5Il">
-                                <rect key="frame" x="0.0" y="0.0" width="453" height="40"/>
+                                <rect key="frame" x="0.0" y="0.0" width="501" height="42"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mileage:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yGO-Iu-Qi2">
-                                        <rect key="frame" x="0.0" y="0.0" width="226.5" height="40"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="250.5" height="42"/>
                                         <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Odometer reading)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tNM-U8-0YB">
-                                        <rect key="frame" x="226.5" y="0.0" width="226.5" height="40"/>
+                                        <rect key="frame" x="250.5" y="0.0" width="250.5" height="42"/>
                                         <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -43,16 +43,16 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="KDL-Zr-edl">
-                                <rect key="frame" x="0.0" y="40" width="453" height="39.5"/>
+                                <rect key="frame" x="0.0" y="42" width="501" height="41.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vvb-Ov-Zqb">
-                                        <rect key="frame" x="0.0" y="0.0" width="226.5" height="39.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="250.5" height="41.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Date)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6G0-Dx-o9N">
-                                        <rect key="frame" x="226.5" y="0.0" width="226.5" height="39.5"/>
+                                        <rect key="frame" x="250.5" y="0.0" width="250.5" height="41.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -60,17 +60,17 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="r02-Js-RYH">
-                                <rect key="frame" x="0.0" y="79.5" width="453" height="40"/>
+                                <rect key="frame" x="0.0" y="83.5" width="501" height="42"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Oil Life:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UvY-wG-C4T">
-                                        <rect key="frame" x="0.0" y="0.0" width="226.5" height="40"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="250.5" height="42"/>
                                         <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Oil Life)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vL2-0o-jYq">
-                                        <rect key="frame" x="226.5" y="0.0" width="226.5" height="40"/>
+                                        <rect key="frame" x="250.5" y="0.0" width="250.5" height="42"/>
                                         <color key="backgroundColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -79,16 +79,16 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="cxF-lD-JYF">
-                                <rect key="frame" x="0.0" y="119.5" width="453" height="39.5"/>
+                                <rect key="frame" x="0.0" y="125.5" width="501" height="41.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filter Life:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xxE-Q4-tLR">
-                                        <rect key="frame" x="0.0" y="0.0" width="226.5" height="39.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="250.5" height="41.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Filter Life)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u7Z-ob-IeG">
-                                        <rect key="frame" x="226.5" y="0.0" width="226.5" height="39.5"/>
+                                        <rect key="frame" x="250.5" y="0.0" width="250.5" height="41.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -99,10 +99,10 @@
                     </stackView>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottomMargin" secondItem="UYF-XL-fLa" secondAttribute="bottom" constant="4" id="IdO-c6-Xv2"/>
-                    <constraint firstItem="UYF-XL-fLa" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="8" id="OqF-py-74W"/>
-                    <constraint firstItem="UYF-XL-fLa" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="4" id="gjs-Ah-DFP"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="UYF-XL-fLa" secondAttribute="trailing" constant="8" id="zN2-HZ-twj"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="UYF-XL-fLa" secondAttribute="bottom" id="IdO-c6-Xv2"/>
+                    <constraint firstItem="UYF-XL-fLa" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-16" id="OqF-py-74W"/>
+                    <constraint firstItem="UYF-XL-fLa" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="gjs-Ah-DFP"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="UYF-XL-fLa" secondAttribute="trailing" constant="-16" id="zN2-HZ-twj"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

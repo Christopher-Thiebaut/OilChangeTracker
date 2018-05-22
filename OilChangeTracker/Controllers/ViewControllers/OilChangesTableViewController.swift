@@ -20,6 +20,8 @@ class OilChangesTableViewController: UITableViewController {
         let containingBundle = Bundle(for: type(of: self))
         let oilChangeCellNib = UINib(nibName: cellReuseID, bundle: containingBundle)
         tableView.register(oilChangeCellNib, forCellReuseIdentifier: cellReuseID)
+        tableView.separatorInset = .zero
+        tableView.separatorColor = .black
         hideEmptySeparators()
     }
 

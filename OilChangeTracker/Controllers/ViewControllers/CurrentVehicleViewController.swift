@@ -13,6 +13,7 @@ class CurrentVehicleViewController: UIViewController {
     var vehicle: Vehicle?
     @IBOutlet weak var nextOilChangeOdometerReadingLabel: UILabel!
     @IBOutlet weak var nextOilChangeDateLabel: UILabel!
+    @IBOutlet weak var vehicleNameLabel: UILabel!
     
     let vehicleEditorNoAnimationSegueID = "toVehicleEditorNoAnimation"
     
@@ -32,7 +33,7 @@ class CurrentVehicleViewController: UIViewController {
     }
     
     private func displayVehicle(_ vehicle: Vehicle) {
-        self.title = vehicle.name
+        vehicleNameLabel.text = vehicle.name
         if let lastOilChange = vehicle.lastOilChange {
             let lastOilChangeLife = min(lastOilChange.oilLife, lastOilChange.filterLife)
             nextOilChangeDateLabel.text = lastOilChange.date.addingTimeInterval(vehicle.timeIntervalBetweenOilChanges).description

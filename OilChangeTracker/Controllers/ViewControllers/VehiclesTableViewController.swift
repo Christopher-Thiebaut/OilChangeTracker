@@ -25,9 +25,6 @@ class VehiclesTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return vehicleController.vehicles.count
@@ -37,7 +34,18 @@ class VehiclesTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseID, for: indexPath)
         let vehicle = vehicleController.vehicles[indexPath.row]
         cell.textLabel?.text = vehicle.name
+        applyBrandingColorsTo(cell: cell, at: indexPath)
         return cell
+    }
+    
+    private func applyBrandingColorsTo(cell: UITableViewCell, at indexPath: IndexPath){
+        if indexPath.row % 2 == 0 {
+            cell.backgroundColor = .orange
+            cell.textLabel?.textColor = .white
+        }else{
+            cell.backgroundColor = .white
+            cell.textLabel?.textColor = .black
+        }
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
